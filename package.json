@@ -1,0 +1,26 @@
+{
+  "name": "user-management-node-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\u001b[D\u001b[D\u001b[D\u001bserver.js)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ali829/simple-user-management-node-express.git"
+  },
+  "keywords": [
+    "user",
+    "management",
+    "express",
+    "node",
+    "mongoose"
+  ],
+  "author": "Abdelali elyasraoui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ali829/simple-user-management-node-express/issues"
+  },
+  "homepage": "https://github.com/ali829/simple-user-management-node-express#readme"
+}
