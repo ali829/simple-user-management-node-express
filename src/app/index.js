@@ -2,12 +2,10 @@ const express = require("express");
 
 const app = express();
 
+/** serve static folder */
+app.use(express.static("public"));
 /* body parser middlewares */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
 
 module.exports = app;
