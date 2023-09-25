@@ -9,4 +9,5 @@ module.exports = {
   database: {
     url: process.env.DATABASE_URL,
   },
+  tokenSecret: process.env.SECRET_ACCESS_TOKEN || "your-secret-key",
 };

@@ -8,6 +8,8 @@ const {
   errorResponse,
   errorValidationResponse,
 } = require("../utils/response.util");
+const { createToken, setJwtCookie } = require("../utils/jwt.util");
+const { use } = require("..");
 
 exports.authenticateUser = async (req, res) => {
   const { email, password } = req.body;
@@ -23,7 +25,9 @@ exports.authenticateUser = async (req, res) => {
     if (!comparePassword(password, user.password)) {
       return errorResponse(res, 401, "Incorrect password");
     }
-    successResponse(res, 200, "Login successful", user);
+    const token = createToken(user._id);
+    setJwtCookie(res, token);
+    successResponse(res, 200, "Login successful", { token });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
