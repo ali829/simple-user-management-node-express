@@ -5,8 +5,8 @@ const userScheme = new Schema(
   {
     username: {
       type: String,
-      unique: [true, "This Email already exists"],
-      required: [true, "Email is required"],
+      unique: [true, "This Username already exists"],
+      required: [true, "Username is required"],
       minlength: [3, "Username should be at least 3 characters long"],
       maxlength: [30, "Username should not exceed 30 characters"],
     },
