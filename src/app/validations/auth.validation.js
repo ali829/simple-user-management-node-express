@@ -1,5 +1,5 @@
-const { json } = require("express");
 const { body, validationResult } = require("express-validator");
+// const { errorValidationResponse } = require("../utils/response.util");
 
 /** validate email to be not empty and validate email format */
 exports.emailValidation = () =>
@@ -14,9 +14,4 @@ exports.passwordValidation = () =>
   body("password").notEmpty().withMessage("Password cannot be empty");
 
 /** check validation result */
-exports.customValidateResult = (req, res) => {
-  const results = validationResult(req);
-  if (!results.isEmpty()) {
-    return res.status(400).json({ errors: results.array() });
-  }
-};
+exports.customValidateResult = (req) => validationResult(req);
